@@ -1,0 +1,7 @@
+Acquire {
+  http {
+    Proxy "http://www-proxy.ericsson.se:8080";
+    Proxy::elx-install.uk.eu.ericsson.se "DIRECT";
+    Proxy::place.holder.ericsson.se "DIRECT";
+  }
+}

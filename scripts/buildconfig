@@ -1,0 +1,6 @@
+export LC_ALL=C
+export DEBIAN_FRONTEND=noninteractive
+export http_proxy=http://www-proxy.ericsson.se:8080
+export ERICSSON_COUNTRY=uk
+minimal_apt_get_install='apt-get install -y --no-install-recommends'
+PRODUCTION_JENKINS_INSTANCE='http://jenkins-satv.tandbergtv.lan/'

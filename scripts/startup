@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Ensuring the ownership is correct
+chown -R jenkins:jenkins /jenkins
+
+if [ ! -d /jenkins/plugins ]
+then
+	mkdir -p /jenkins/plugins
+	chown -R jenkins:jenkins /jenkins
+	
+	#Copy jenkins plugins from /tmp/jenkins_plugins
+	if [ -d /tmp/jenkins_plugins ]
+	then
+		mv /tmp/jenkins_plugins/*.hpi /jenkins/plugins/
+	fi
+fi
+
+if [ ! -f /var/run/jenkins/jenkins.pid ]
+then
+	/usr/sbin/service jenkins start
+fi
+
+/usr/sbin/service jenkins status
